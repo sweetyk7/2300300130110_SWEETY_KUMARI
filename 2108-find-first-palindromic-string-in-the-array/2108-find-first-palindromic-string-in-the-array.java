@@ -15,8 +15,8 @@ class Solution {
                     right--;
                 }   
             }
-            if(left >= right){
-                return words[i];
+            if(left == right){ // after checking palindrome,now we return palindrom word so i use this condition (because in last,Ex-> aba,left=b & right =b )      
+                return words[i];  // after confirm palindrom then return the palindrom words       
             }
         }
         return "";
