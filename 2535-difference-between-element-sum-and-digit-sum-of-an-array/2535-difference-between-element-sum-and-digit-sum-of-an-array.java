@@ -14,7 +14,7 @@ class Solution {
                 nums[i]=nums[i]/10;
             }
         }
-        int final_difference = Math.abs(Element_Sum - Digit_Sum);
+        int final_difference = Math.abs(Element_Sum - Digit_Sum); // Math.abs is used for |x-y| means always give +ve val
         return final_difference;
     }
 }
