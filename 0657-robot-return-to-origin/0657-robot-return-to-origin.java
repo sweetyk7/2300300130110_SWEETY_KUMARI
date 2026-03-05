@@ -15,7 +15,7 @@ class Solution {
             }
             else if(ch=='D'){
                 y--;
-            } 
+            }
         }
         if(x==0 && y==0){
             return true;
