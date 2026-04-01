@@ -1,5 +1,10 @@
 class Solution {
-    public static void Solve(int i,int[] candidates,int target,List<List<Integer>> ans,List<Integer> curr) {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) { 
+        List<List<Integer>> ans = new ArrayList();
+        Solve(0,candidates,target,ans,new ArrayList<Integer>());
+        return ans;
+    }    
+    public static void Solve(int i,int[] candidates,int target,List<List<Integer>> ans, List<Integer> curr) {
         if(target == 0){
             ans.add(new ArrayList<>(curr));
             return;
@@ -14,10 +19,5 @@ class Solution {
             curr.remove(curr.size()-1);
         }
         Solve(i+1,candidates,target,ans,curr);
-    }    
-    public List<List<Integer>> combinationSum(int[] candidates, int target) { 
-        List<List<Integer>> ans = new ArrayList();
-        Solve(0,candidates,target,ans,new ArrayList<Integer>());
-        return ans;
     }
 }
