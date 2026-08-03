@@ -1,23 +1,20 @@
 class Solution {
     public int firstUniqChar(String s) {
-        HashMap<Character,Integer> map = new HashMap<>();
-        int n = s.length();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<s.length();i++){
             char ch = s.charAt(i);
-            if(!map.containsKey(ch)){
-                map.put(ch,1);
+            int count=0;
+            for(int j=0;j<s.length();j++){
+                if(ch==s.charAt(j)){
+                    count++;
+                }
+                if(count>1){
+                    break;
+                }
             }
-            else{
-                map.put(ch,map.get(ch)+1);
+            if(count==1){
+                return i;
             }
         }
-        for(int i=0;i<n;i++){
-            char ch = s.charAt(i);
-            if(map.get(ch) == 1){
-                return i;
-            
-            }
-        } 
         return -1;
     }
 }
