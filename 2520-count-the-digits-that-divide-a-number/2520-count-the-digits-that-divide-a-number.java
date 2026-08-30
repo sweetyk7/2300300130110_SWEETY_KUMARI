@@ -1,13 +1,11 @@
 class Solution {
     public int countDigits(int num) {
-        int val = num;
-        int count = 0;
+        int count=0;
+        int val=num;
         while(val>0){
-            int digit = val%10;
-            if(digit != 0){  //because (num % 0) -> error
-                if(num%digit == 0){
-                    count++;
-                }
+            int digit=val%10;
+            if(num%digit == 0){
+                count++;
             }
             val=val/10;
         }
